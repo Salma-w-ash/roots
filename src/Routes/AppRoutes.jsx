@@ -1,18 +1,18 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import LoginForm from '../forms/LoginForm'
-import LoginPage from '../pages/LoginPage'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginForm from "../forms/LoginForm";
+import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
 
 export default function AppRoutes() {
   return (
     <div>
-        <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-            <Route path='/' element={<LoginPage/>}/>
-
-          
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Routes>
-        </BrowserRouter>
+      </BrowserRouter>
     </div>
-  )
+  );
 }

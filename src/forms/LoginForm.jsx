@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from "yup"
 import google from "../assets/f88184c68dee88f348660b174d22c163e0848498.png"
 import StartSection from '../components/StartSection';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
   const validationSchema = Yup.object({
@@ -11,6 +12,7 @@ export default function LoginForm() {
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),
   });
+  const navigate = useNavigate();
   return (
     <>
     <div className="w-[620px] min-h-screen bg-white">
@@ -64,7 +66,7 @@ export default function LoginForm() {
         {/* here i'll use navigate to navigate to register page */}
         <p className="font-primary font-normal text-lg text-[#1A1A1A]">
           Don’t have an account?
-          <span className="font-primary font-normal text-lg text-(--primary-color)" >
+          <span onClick={() => navigate("/register")} className="font-primary font-normal text-lg text-(--primary-color)" >
             Sign up now
           </span>
         </p>
