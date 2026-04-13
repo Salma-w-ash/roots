@@ -20,8 +20,11 @@ return;
     })
     .then((res) => {
       console.log(res);
-      console.log("SUCCESS ✅", res);
-      showThankYouToast();
+      console.log("SUCCESS", res);
+      showThankYouToast({
+        title: "Registered successfully!",
+        subtitle: "Enjoy your Healthy Life Plan",
+      });
       setTimeout(() => navigate("/"), 4000);
     })
     .catch((err) => {
